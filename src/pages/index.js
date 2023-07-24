@@ -58,26 +58,37 @@ export default function Home() {
             <h3 className='text-3xl pt-7 py-1 dark:text-gray-200'>Projects</h3>
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'>My Projects are listed below</p>
           </div>
-          <div className='flex flex-col gap-10 lg:flex-row lg:flex-wrap'>
-            <div className='basis-1/4 flex-1   '>
-              {/* <div className='absolute text-white left-1'>GPT3</div> */}
-              <Image src={web1} className='rounded-xl object-cover overflow-hidden hover:blur-sm ' width={"100%"}  />
-            </div>
-            <div className='basis-1/4 flex-1 hover:blur-sm '>
-              <Image src={web2} className='rounded-xl object-cover overflow-hidden ' width={"100%"}  />
-            </div>
-            <div className='basis-1/4 flex-1  hover:blur-sm'>
-              <Image src={web3} className='rounded-xl object-cover overflow-hidden ' width={"100%"}  />
-            </div>
-            <div className='basis-1/4 flex-1  hover:blur-sm'>
-              <Image src={web4} className='rounded-xl object-cover overflow-clip ' width={"100%"}  />
-            </div>
-            <div className='basis-1/4 flex-1  hover:blur-sm'>
-              <Image src={web5} className='rounded-xl object-cover overflow-clip ' width={"100%"}  />
-            </div>
-            <div className='basis-1/4 flex-1  hover:blur-sm'>
-              <Image src={web6} className='rounded-xl object-cover overflow-clip ' width={"100%"}  />
-            </div>
+          <div className="grid w-full grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
+  <div className="textContent">
+    hehe bye bye
+  </div>
+</div>
+<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
+  <div className="textContent">
+    hehe bye bye
+  </div>
+</div>
+<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
+  <div className="textContent">
+    hehe bye bye
+  </div>
+</div>
+<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
+  <div className="textContent">
+    hehe bye bye
+  </div>
+</div>
+<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
+  <div className="textContent">
+    hehe bye bye
+  </div>
+</div>
+<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
+  <div className="textContent">
+    hehe bye bye
+  </div>
+</div>
           </div>
         </section>
       </main>
