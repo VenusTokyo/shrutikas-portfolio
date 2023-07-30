@@ -10,6 +10,8 @@ import web3 from '../../public/web3.png'
 import web4 from '../../public/web4.png'
 import web5 from '../../public/web5.png'
 import web6 from '../../public/web6.png'
+
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true)
   return (
@@ -58,37 +60,51 @@ export default function Home() {
             <h3 className='text-3xl pt-7 py-1 dark:text-gray-200'>Projects</h3>
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'>My Projects are listed below</p>
           </div>
-          <div className="grid w-full grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
-  <div className="textContent">
-    hehe bye bye
-  </div>
-</div>
-<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
-  <div className="textContent">
-    hehe bye bye
-  </div>
-</div>
-<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
-  <div className="textContent">
-    hehe bye bye
-  </div>
-</div>
-<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
-  <div className="textContent">
-    hehe bye bye
-  </div>
-</div>
-<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
-  <div className="textContent">
-    hehe bye bye
-  </div>
-</div>
-<div className="card w-1/4 h-24" style={{background:URL(web1)}}>
-  <div className="textContent">
-    hehe bye bye
-  </div>
-</div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+            <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl bg-gray-800">
+              <Image className='rounded-xl' src={web1} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+              <Image className='rounded-lg' src={web2} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+              <Image className='rounded-lg' src={web3} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+              <Image className='rounded-lg' src={web4} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+              <Image className='rounded-lg' src={web5} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+              <Image className='rounded-lg' src={web6} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+           
+
           </div>
         </section>
       </main>
