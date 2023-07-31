@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { BsFillMoonStarsFill } from 'react-icons/bs'
 import { AiFillTwitterCircle, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
+import { BiLogoHtml5, BiLogoCss3, BiLogoJavascript, BiLogoReact } from 'react-icons/bi'
 import Image from 'next/image'
 import avatar from '../../public/avatar.png'
 import web1 from '../../public/web1.png'
@@ -10,6 +11,7 @@ import web3 from '../../public/web3.png'
 import web4 from '../../public/web4.png'
 import web5 from '../../public/web5.png'
 import web6 from '../../public/web6.png'
+import restaurant from '../../public/web7.png'
 
 
 export default function Home() {
@@ -61,49 +63,75 @@ export default function Home() {
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'>My Projects are listed below</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
+            
             <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl bg-gray-800">
-              <Image className='rounded-xl' src={web1} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <Image className='rounded-xl' src={web1} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>GPT-3 Website</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
               <div className="flex justify-around mt-5 mb-5 w-full">
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+                <a href="https://gpt3-venustokyo.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/GPT-3" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+              </div>
+            </div>
+            <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl bg-gray-800">
+              <Image className='rounded-xl' src={restaurant} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>Gericht Restaurant Website</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
+              <div className="flex justify-around mt-5 mb-5 w-full">
+                <a href="https://venustokyo-gericht-restaurant.vercel.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/Gericht-Restaurant-Website" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
-              <Image className='rounded-lg' src={web2} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <Image className='rounded-lg' src={web2} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>Times of India Clone</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
               <div className="flex justify-around mt-5 mb-5 w-full">
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+                <a href="https://times-of-india-venustokyo.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/Times-Of-India" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
-              <Image className='rounded-lg' src={web3} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <Image className='rounded-lg' src={web3} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>Weather WebApp</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
+
               <div className="flex justify-around mt-5 mb-5 w-full">
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+                <a href="https://venustokyo-weather-app.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/Weather-App" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
-              <Image className='rounded-lg' src={web4} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <Image className='rounded-lg' src={web4} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>Meme Generator</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
+
               <div className="flex justify-around mt-5 mb-5 w-full">
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+                <a href="https://venustokyo-meme-app.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/Meme-App" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
-              <Image className='rounded-lg' src={web5} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <Image className='rounded-lg' src={web5} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>Todo WebApp</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
+
               <div className="flex justify-around mt-5 mb-5 w-full">
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+                <a href="https://venustokyo-keep-notes.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/keep-notes" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
-              <Image className='rounded-lg' src={web6} height={'300'} style={{width:'100%', overflow:'hidden'}} />
+              <Image className='rounded-lg' src={web6} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
+              <h2 className=' mt-4 text-white font-mono text-2xl'>Dictionary</h2>
+              <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
+
               <div className="flex justify-around mt-5 mb-5 w-full">
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
-                <a href="" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
+                <a href="https://venustokyo-dictionary.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
+                <a href="https://github.com/VenusTokyo/Dictionary" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-           
+
 
           </div>
         </section>
