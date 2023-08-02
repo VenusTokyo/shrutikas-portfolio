@@ -12,6 +12,7 @@ import web4 from '../../public/web4.png'
 import web5 from '../../public/web5.png'
 import web6 from '../../public/web6.png'
 import restaurant from '../../public/web7.png'
+import mypic from "../../public/mypic.png"
 
 
 export default function Home() {
@@ -133,6 +134,30 @@ export default function Home() {
             </div>
 
 
+          </div>
+        </section>
+        <section>
+        <div>
+            <h3 className='text-3xl pt-7 py-1 dark:text-gray-200'>Contact Me</h3>
+            <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'></p>
+          </div>
+          <div className=" flex justify-around md:flex-row sm:flex-col w-full">
+            <div className="flex justify-center">
+              <div className='h-full border border-l-2 border-purple-500'/>
+              <Image src={mypic} height={400}/>
+            </div>
+            <div className="flex justify-start">
+              <form action="" className=''>
+                <input type="text" placeholder='Name' />
+                <br />
+                <input type="email" placeholder='Email' />
+                <br />
+                <input type="text" placeholder='Message' />
+                <br />
+                <button>Submit</button>
+
+              </form>
+            </div>
           </div>
         </section>
       </main>
