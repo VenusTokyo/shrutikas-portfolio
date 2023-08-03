@@ -154,7 +154,7 @@ export default function Home() {
                 <br />
                 <input type="text" placeholder='Message' />
                 <br />
-                <button>Submit</button>
+                <button className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md ml-8 font-mono'>Submit</button>
 
               </form>
             </div>
