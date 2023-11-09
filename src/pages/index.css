@@ -9,3 +9,15 @@
 .card:hover .textContent{
  bottom: 0;
 }
+.input{
+    background: transparent;
+    outline: none;
+    margin-bottom: .5rem;
+    color: white;
+    
+    font-size: 18px
+}
+.input-box{
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.596); */
+    margin-bottom: 1rem;
+}

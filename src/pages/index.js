@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import { BsFillMoonStarsFill } from 'react-icons/bs'
-import { AiFillTwitterCircle, AiFillLinkedin, AiFillGithub } from 'react-icons/ai'
-import { BiLogoHtml5, BiLogoCss3, BiLogoJavascript, BiLogoReact } from 'react-icons/bi'
+import { BsFillMoonStarsFill, BsPerson } from 'react-icons/bs'
+import { AiFillTwitterCircle, AiFillLinkedin, AiFillGithub   } from 'react-icons/ai'
+import { BiLogoHtml5, BiLogoCss3, BiLogoJavascript, BiLogoReact, BiPhoneCall } from 'react-icons/bi'
+import {PiAtBold} from 'react-icons/pi'
+import {RiMessage2Line} from 'react-icons/ri'
 import Image from 'next/image'
 import avatar from '../../public/avatar.png'
 import web1 from '../../public/web1.png'
@@ -60,11 +62,10 @@ export default function Home() {
         </section>
         <section>
           <div>
-            <h3 className='text-3xl pt-7 py-1 dark:text-gray-200'>Projects</h3>
+            <h3 className='text-3xl pt-7 py-1 text-teal-500'>Projects</h3>
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'>My Projects are listed below</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
-            
             <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl bg-gray-800">
               <Image className='rounded-xl' src={web1} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>GPT-3 Website</h2>
@@ -137,26 +138,40 @@ export default function Home() {
           </div>
         </section>
         <section>
-        <div>
-            <h3 className='text-3xl pt-7 py-1 dark:text-gray-200'>Contact Me</h3>
+          <div>
+
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'></p>
           </div>
           <div className=" flex justify-around md:flex-row sm:flex-col w-full">
-            <div className="flex justify-center">
-              <div className='h-full border border-l-2 border-purple-500'/>
-              <Image src={mypic} height={400}/>
-            </div>
-            <div className="flex justify-start">
+            
+            <div className="flex flex-col justify-start w-1/2">
+              <h3 className='text-3xl pt-7 py-1 text-teal-500 mb-6'>Contact Me</h3>
               <form action="" className=''>
-                <input type="text" placeholder='Name' />
-                <br />
-                <input type="email" placeholder='Email' />
-                <br />
-                <input type="text" placeholder='Message' />
-                <br />
-                <button className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md ml-8 font-mono'>Submit</button>
+                <div className="flex input-box">
+                  <BsPerson color='#a955f77f' fontSize={30}/>
+                  <input type="text" placeholder='Name' name='Name' className='w-full input' />
+                </div>
+                <div className="flex input-box">
+                  <PiAtBold color='#a955f77f' fontSize={30}/>
+                  <input type="email" placeholder='Email Address' name='Email' className='w-full input'/>
+                </div>
+                <div className="flex input-box">
+                  <BiPhoneCall color='#a955f77f' fontSize={30}/>
+                  <input type="phone" placeholder='Phone Number' name='Phone' className='w-full input'/>
+                </div>
+                <div className="flex input-box">
+                  <RiMessage2Line color='#a955f77f' fontSize={30}/>
+                  <textarea type="text" placeholder='Message' rows={6} className='w-full input'/>
+                </div>
+
+                <button type='submit' value='submit' className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md font-mono'>Submit</button>
 
               </form>
+            </div>
+            <div className="flex justify-center items-end ">
+              {/* <div className='h-full border border-l-2 border-purple-500'/> */}
+              {/* <div className="blob absolute"></div> */}
+              <Image src={mypic} height={400}  className=' z-10' />
             </div>
           </div>
         </section>
