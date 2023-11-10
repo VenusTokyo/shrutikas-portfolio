@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Shrutika's Portfolio</title>
+        <title>Shrutika&apos;s Portfolio</title>
       </Head>
       <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         <section className='min-h-screen'>
@@ -39,7 +39,7 @@ export default function Home() {
               <div className='text-center p-10 '>
                 <h2 className=' text-5xl py-2 text-teal-500 md:text-4xl lg:text-5xl font-mono '>Shrutika Shaw&#10084;</h2>
                 <h3 className=' text-2xl py-2 md:text-xl font-mono dark:text-gray-200'>Software Developer</h3>
-                <p className=' text-sm py-5 leading-6 text-gray-600 dark:text-gray-400 md:text-l font-mono'>Currently pursuing a master's degree in Computer Applications, I thrive on merging my technical expertise with a passion for crafting innovative solutions. &#10024; </p>
+                <p className=' text-sm py-5 leading-6 text-gray-600 dark:text-gray-400 md:text-l font-mono'>Currently pursuing a master&apos;s degree in Computer Applications, I thrive on merging my technical expertise with a passion for crafting innovative solutions. &#10024; </p>
               </div>
               <p className='text-xl flex justify-center py-2 font-mono dark:text-gray-200'>Connect with me here &#128071;  </p>
               <div className='text-5xl flex justify-center gap-16 py-1 text-teal-500'>
