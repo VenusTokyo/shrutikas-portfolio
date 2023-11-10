@@ -75,7 +75,7 @@ export default function Home() {
                 <a href="https://github.com/VenusTokyo/GPT-3" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-            <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl card">
               <Image className='rounded-xl' src={restaurant} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>Gericht Restaurant Website</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
@@ -84,7 +84,7 @@ export default function Home() {
                 <a href="https://github.com/VenusTokyo/Gericht-Restaurant-Website" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web2} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>Times of India Clone</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
@@ -93,7 +93,7 @@ export default function Home() {
                 <a href="https://github.com/VenusTokyo/Times-Of-India" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web3} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>Weather WebApp</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
@@ -103,7 +103,7 @@ export default function Home() {
                 <a href="https://github.com/VenusTokyo/Weather-App" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web4} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>Meme Generator</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
@@ -113,7 +113,7 @@ export default function Home() {
                 <a href="https://github.com/VenusTokyo/Meme-App" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web5} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>Todo WebApp</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
@@ -123,7 +123,7 @@ export default function Home() {
                 <a href="https://github.com/VenusTokyo/keep-notes" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Code</a>
               </div>
             </div>
-            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web6} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
               <h2 className=' mt-4 text-white font-mono text-2xl'>Dictionary</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
@@ -142,29 +142,29 @@ export default function Home() {
 
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'></p>
           </div>
-          <div className=" flex justify-around md:flex-row sm:flex-col w-full">
+          <div className=" flex justify-around md:flex-row flex-col-reverse w-full">
             
-            <div className="flex flex-col justify-start w-1/2">
+            <div className="flex flex-col justify-start md:w-1/2">
               <h3 className='text-3xl pt-7 py-1 text-teal-500 mb-6'>Contact Me</h3>
-              <form action="" className=''>
-                <div className="flex input-box">
-                  <BsPerson color='#a955f77f' fontSize={30}/>
-                  <input type="text" placeholder='Name' name='Name' className='w-full input' />
+              <form action="https://formsubmit.co/shrutika.shaw2015@gmail.com" method="POST" className='rounded-xl glow p-2'>
+                <div className="flex input-box mt-2 ml-4">
+                  <BsPerson color='white' fontSize={30}/>
+                  <input type="text" placeholder='Name' name='Name' className='w-full input pl-3' />
                 </div>
-                <div className="flex input-box">
-                  <PiAtBold color='#a955f77f' fontSize={30}/>
-                  <input type="email" placeholder='Email Address' name='Email' className='w-full input'/>
+                <div className="flex input-box ml-4">
+                  <PiAtBold color='white' fontSize={30}/>
+                  <input type="email" placeholder='Email Address' name='Email' className='w-full input pl-3'/>
                 </div>
-                <div className="flex input-box">
-                  <BiPhoneCall color='#a955f77f' fontSize={30}/>
-                  <input type="phone" placeholder='Phone Number' name='Phone' className='w-full input'/>
+                <div className="flex input-box ml-4">
+                  <BiPhoneCall color='white' fontSize={30}/>
+                  <input type="phone" placeholder='Phone Number' name='Phone' className='w-full input pl-3'/>
                 </div>
-                <div className="flex input-box">
-                  <RiMessage2Line color='#a955f77f' fontSize={30}/>
-                  <textarea type="text" placeholder='Message' rows={6} className='w-full input'/>
+                <div className="flex input-box ml-4">
+                  <RiMessage2Line color='white' fontSize={30}/>
+                  <textarea type="text" placeholder='Message' rows={6} className='w-full input pl-3'/>
                 </div>
 
-                <button type='submit' value='submit' className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md font-mono'>Submit</button>
+                <button type='submit' value='submit' className='ml-4 mb-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md font-mono'>Submit</button>
 
               </form>
             </div>
@@ -174,7 +174,11 @@ export default function Home() {
               <Image src={mypic} height={400}  className=' z-10' />
             </div>
           </div>
+          <div className="flex justify-center mt-16 pt-3 pb-3 border-t-slate-500 border-t-2 text-gray-700 dark:text-gray-400">
+            Developed by with &#10084; | Shrutika Shaw &copy; 2023
+          </div>
         </section>
+        
       </main>
     </div>
   )
