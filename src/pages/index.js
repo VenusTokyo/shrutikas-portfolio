@@ -161,7 +161,7 @@ export default function Home() {
                 </div>
                 <div className="flex input-box ml-4">
                   <RiMessage2Line color='white' fontSize={30}/>
-                  <textarea type="text" placeholder='Message' rows={6} className='w-full input pl-3'/>
+                  <textarea type="text" placeholder='Message' rows={6} name='Message' className='w-full input pl-3'/>
                 </div>
 
                 <button type='submit' value='submit' className='ml-4 mb-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md font-mono'>Submit</button>
