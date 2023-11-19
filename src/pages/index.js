@@ -30,14 +30,14 @@ export default function Home() {
             <h1 className='text-xl font-burtons dark:text-gray-200'>developedbyS</h1>
             <ul className='flex items-center'>
               <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-2xl dark:text-gray-200' /></li>
-              <li><a href="https://drive.google.com/file/d/1eCJzhvpzf7Q9TD-TIpJDD7_K6td7_lGL/view" className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md ml-8 font-mono'>Resume</a></li>
+              <li><a href="https://drive.google.com/file/d/1wCOdr7o23AhxuwynkIELW-W8M16xU32Z/view?usp=sharing" className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md ml-8 font-mono'>Resume</a></li>
             </ul>
           </nav>
           <div className='md:flex md:items-center'>
             <div className=' md:w-1/2 sm:w-full'>
 
-              <div className='text-center p-10 '>
-                <h2 className=' text-5xl py-2 text-teal-500 md:text-4xl lg:text-5xl font-mono '>Shrutika Shaw&#10084;</h2>
+              <div className='text-center p-4 '>
+                <h2 className=' text-4xl py-2 text-teal-500 md:text-4xl lg:text-5xl font-mono '>Shrutika Shaw&#10084;</h2>
                 <h3 className=' text-2xl py-2 md:text-xl font-mono dark:text-gray-200'>Software Developer</h3>
                 <p className=' text-sm py-5 leading-6 text-gray-600 dark:text-gray-400 md:text-l font-mono'>Currently pursuing a master&apos;s degree in Computer Applications, I thrive on merging my technical expertise with a passion for crafting innovative solutions. &#10024; </p>
               </div>
@@ -54,8 +54,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className=' flex mt-5 mx-auto bg-gradient-to-br from-teal-400 to-purple-500 backdrop-blur-md rounded-full w-80 h-80  md:w-96 md:h-96'>
-
+            <div className=' flex mt-5 mx-auto bg-gradient-to-br from-teal-400 to-purple-500 backdrop-blur-md rounded-full w-75 h-75  md:w-96 md:h-96'>
               <Image src={avatar} />
             </div>
           </div>
@@ -66,9 +65,9 @@ export default function Home() {
             <p className='text-md py-5 leading-7 text-gray-600 dark:text-gray-400'>My Projects are listed below</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
-            <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl bg-gray-800">
+            <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl card">
               <Image className='rounded-xl' src={web1} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>GPT-3 Website</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center'>GPT-3 Website</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
               <div className="flex justify-around mt-5 mb-5 w-full">
                 <a href="https://gpt3-venustokyo.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
@@ -77,7 +76,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col  items-center m-3 rounded-xl shadow-2xl card">
               <Image className='rounded-xl' src={restaurant} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>Gericht Restaurant Website</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center' >Gericht Restaurant Website</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
               <div className="flex justify-around mt-5 mb-5 w-full">
                 <a href="https://venustokyo-gericht-restaurant.vercel.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
@@ -86,7 +85,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web2} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>Times of India Clone</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center'>Times of India Clone</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoReact color='cyan' /><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
               <div className="flex justify-around mt-5 mb-5 w-full">
                 <a href="https://times-of-india-venustokyo.netlify.app/" className='bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md  font-mono'>Live</a>
@@ -95,7 +94,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web3} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>Weather WebApp</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center'>Weather WebApp</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
 
               <div className="flex justify-around mt-5 mb-5 w-full">
@@ -105,7 +104,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web4} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>Meme Generator</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center'>Meme Generator</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
 
               <div className="flex justify-around mt-5 mb-5 w-full">
@@ -115,7 +114,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web5} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>Todo WebApp</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center'>Todo WebApp</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
 
               <div className="flex justify-around mt-5 mb-5 w-full">
@@ -125,7 +124,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col  items-center m-3 rounded-lg shadow-2xl card">
               <Image className='rounded-lg' src={web6} height={'300'} style={{ width: '100%', overflow: 'hidden' }} />
-              <h2 className=' mt-4 text-white font-mono text-2xl'>Dictionary</h2>
+              <h2 className=' mt-4 text-gray-600 dark:text-white font-mono text-2xl text-center'>Dictionary</h2>
               <h3 className='flex text-2xl mt-3 space-x-3' ><BiLogoHtml5 color='red' /><BiLogoCss3 color='blue' /><BiLogoJavascript color='yellow' /> </h3>
 
               <div className="flex justify-around mt-5 mb-5 w-full">
@@ -148,19 +147,19 @@ export default function Home() {
               <h3 className='text-3xl pt-7 py-1 text-teal-500 mb-6'>Contact Me</h3>
               <form action="https://formsubmit.co/shrutika.shaw2015@gmail.com" method="POST" className='rounded-xl glow p-2'>
                 <div className="flex input-box mt-2 ml-4">
-                  <BsPerson color='white' fontSize={30}/>
+                  <BsPerson fontSize={30} className='text-gray-600 dark:text-white'/>
                   <input type="text" placeholder='Name' name='Name' className='w-full input pl-3' />
                 </div>
                 <div className="flex input-box ml-4">
-                  <PiAtBold color='white' fontSize={30}/>
+                  <PiAtBold className='text-gray-600 dark:text-white' fontSize={30}/>
                   <input type="email" placeholder='Email Address' name='Email' className='w-full input pl-3'/>
                 </div>
                 <div className="flex input-box ml-4">
-                  <BiPhoneCall color='white' fontSize={30}/>
+                  <BiPhoneCall className='text-gray-600 dark:text-white' fontSize={30}/>
                   <input type="phone" placeholder='Phone Number' name='Phone' className='w-full input pl-3'/>
                 </div>
                 <div className="flex input-box ml-4">
-                  <RiMessage2Line color='white' fontSize={30}/>
+                  <RiMessage2Line className='text-gray-600 dark:text-white' fontSize={30}/>
                   <textarea type="text" placeholder='Message' rows={6} className='w-full input pl-3'/>
                 </div>
 
