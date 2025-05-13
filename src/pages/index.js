@@ -30,7 +30,7 @@ export default function Home() {
             <h1 className='text-xl font-burtons dark:text-gray-200'>developedbyS</h1>
             <ul className='flex items-center'>
               <li><BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-2xl dark:text-gray-200' /></li>
-              <li><a href="https://drive.google.com/file/d/1wCOdr7o23AhxuwynkIELW-W8M16xU32Z/view?usp=sharing" className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md ml-8 font-mono'>Resume</a></li>
+              <li><a href="https://drive.google.com/file/d/1m9etJJmRQGNwPfkRwWruCwyMoIWwWo1d/view?usp=sharing" className=' bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-2 rounded-md ml-8 font-mono'>Resume</a></li>
             </ul>
           </nav>
           <div className='md:flex md:items-center'>
