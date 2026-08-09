@@ -3,9 +3,45 @@
 @tailwind utilities;
 
 
-@font-face {
-  font-family: "burtons";
-  src: url(../../public/Burtons.otf);
+/* Scroll snapping was removed deliberately. It works against the scroll-driven
+   sections: snapping exists to eliminate the in-between scroll positions that
+   scrubbing an animation depends on, so the two cannot both be satisfied. */
+
+/* ---- Digital scrapbook animations + selection (used by /v2) ---- */
+::selection {
+  background: #f6c6d6;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--r, 0deg));
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 .blob{
   height: 100%;
