@@ -1,29 +1,31 @@
 import Image from 'next/image';
 import Section from './Section';
-
-const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shrutika-shaw/', icon: 'https://img.icons8.com/doodle/48/linkedin--v2.png' },
-  { label: 'GitHub', href: 'https://github.com/VenusTokyo', icon: 'https://img.icons8.com/doodle/48/github--v1.png' },
-  { label: 'Email', href: 'mailto:shrutika.shaw2015@gmail.com', icon: 'https://img.icons8.com/doodle/48/gmail.png' },
-  { label: 'X', href: 'https://x.com/QuiteIronical', icon: 'https://img.icons8.com/doodle/48/twitter-circled.png' },
-];
+import SocialRow from '../../components/ui/SocialRow';
 
 export default function Hero() {
   return (
     <Section id="hero">
       <div className="relative h-full w-full">
-        <p className="absolute left-1/2 top-[18%] w-full -translate-x-1/2 text-center font-gochi text-base font-extralight tracking-widest text-navy-dark md:left-[20%] md:top-[6%] md:w-auto md:translate-x-0 md:text-left md:text-2xl">
+        <p className="absolute left-1/2 top-[4%] w-full -translate-x-1/2 text-center font-gochi text-base font-extralight tracking-widest text-navy-dark md:left-[20%] md:top-[6%] md:w-auto md:translate-x-0 md:text-left md:text-2xl">
           Hi, Welcome to the world of
         </p>
 
-        {/* On a phone the two names stack about the middle of the screen; on
-            desktop they keep their original offset arrangement. */}
+        {/* On a phone the three pieces overlap rather than queue up. Shrutika is
+            set behind the photograph with their top edges flush, so the lettering
+            runs across the shoulders and out to both margins; Shaw signs off
+            across the feet, catching the last of the photograph and finishing
+            below it. Desktop keeps its own arrangement, which is the same idea
+            laid out sideways.
+
+            An earlier pass stacked them in a strict column with no overlap. It
+            was legible and completely flat — the name stopped being written on
+            the picture and became a caption above it. */}
         <Image
           src="/Shrutika.svg"
           alt="Shrutika"
           width={1710}
           height={468}
-          className="absolute left-1/2 top-[28%] z-0 w-[99vw] -translate-x-1/2 md:top-[10%] md:w-[85vw]"
+          className="absolute left-1/2 top-[24%] z-0 w-[92vw] -translate-x-1/2 md:top-[10%] md:w-[85vw]"
           priority
         />
 
@@ -34,7 +36,7 @@ export default function Hero() {
           alt="Shrutika Shaw"
           width={623}
           height={1149}
-          className="absolute left-1/2 top-[50%] z-10 w-72 -translate-x-1/2 -translate-y-1/2 sm:w-52 md:top-1/2 md:w-72"
+          className="absolute left-1/2  z-10 w-[56vw] -translate-x-1/2  sm:w-52 top-1/2 md:w-72 -translate-y-1/2"
           priority
         />
 
@@ -43,32 +45,23 @@ export default function Hero() {
           alt="Shaw"
           width={1198}
           height={509}
-          className="absolute left-1/2 top-[45%] z-20 w-[80vw] -translate-x-1/2 md:left-[40%] md:top-[45%] md:w-[40vw] md:translate-x-0"
+          className="absolute left-1/2 top-[40%] z-20 w-[96vw] -translate-x-1/2 md:left-[40%] md:top-[45%] md:w-[40vw] md:translate-x-0"
           priority
         />
 
         <p className="absolute bottom-[15%] left-3 font-gochi text-xl tracking-widest text-navy-dark md:bottom-[7%] md:left-0 md:ml-4 md:text-3xl">
           Software Engineer
         </p>
-        <p className="absolute bottom-[12%] left-3 font-gochi text-xl tracking-widest text-navy-dark md:bottom-[2%] md:left-0 md:ml-4 md:text-3xl">
+        <p className="absolute bottom-[10%] left-3 font-gochi text-xl tracking-widest text-navy-dark md:bottom-[2%] md:left-0 md:ml-4 md:text-3xl">
           Artist
         </p>
-
-        <div className="absolute bottom-[3%] left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 md:bottom-[4%] md:left-auto md:right-16 md:translate-x-0 md:gap-4">
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              aria-label={s.label}
-              target={s.href.startsWith('mailto:') ? undefined : '_blank'}
-              rel={s.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-              className="transition-transform hover:-translate-y-1"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img width="48" height="48" src={s.icon} alt={s.label} className="h-9 w-9 md:h-12 md:w-12" />
-            </a>
-          ))}
-        </div>
+        {/* inset-x-0 with justify-center, not left-1/2 with a translate. An
+            absolutely positioned box with `left: 50%` and `right: auto` is
+            shrink-to-fit inside what remains to its right — half the screen, 195px
+            on a phone. Four icons fitted; the fifth pushed the flex items to
+            shrink and max-width clamped every icon to 28px, which is why they
+            looked squashed. Spanning the width removes the constraint. */}
+        <SocialRow className="absolute inset-x-0 bottom-[3%] z-30 justify-center gap-3 md:inset-x-auto md:bottom-[4%] md:right-16 md:gap-4" />
       </div>
     </Section>
   );

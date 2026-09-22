@@ -1,0 +1,111 @@
+[   18137ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom.development.js:29834
+[   21424ms] [LOG] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit @ https://va.vercel-scripts.com/v1/script.debug.js:0
+[   30172ms] [WARNING] WebGL: INVALID_VALUE: texSubImage2D: bad image data @ webpack-internal:///./node_modules/three/build/three.module.js:24037
+[   89006ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[   89411ms] [LOG] [Fast Refresh] done in 406ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  103032ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  103624ms] [LOG] [Fast Refresh] done in 592ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  108689ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  109180ms] [LOG] [Fast Refresh] done in 490ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  111153ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  111739ms] [LOG] [Fast Refresh] done in 587ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  115967ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  116289ms] [ERROR] ./src/sections/v2/TreasureSpill.jsx
+Error: 
+  x Expression expected
+    ,-[C:\Users\shrut\Desktop\New folder\shrutikas-portfolio\src\sections\v2\TreasureSpill.jsx:54:1]
+ 54 |   },
+ 55 |   {
+ 56 |     key: 'cdrom',
+ 57 |     phone: { x: , y: 28, size: 54, focus: 72 },
+    :                 ^
+ 58 |     label: 'CD-ROM',
+ 59 |     src: '/treasure/CD-ROM.png',
+ 60 |     w: 730,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/sections/v2/TreasureSpill.jsx
+./src/sections/v2/TreasureChest.jsx
+./src/sections/v2/Projects.jsx @ webpack-internal:///./node_modules/next/dist/compiled/@next/react-dev-overlay/dist/client.js:1
+[  116370ms] [ERROR] ./src/sections/v2/TreasureSpill.jsx
+Error: 
+  x Expression expected
+    ,-[C:\Users\shrut\Desktop\New folder\shrutikas-portfolio\src\sections\v2\TreasureSpill.jsx:54:1]
+ 54 |   },
+ 55 |   {
+ 56 |     key: 'cdrom',
+ 57 |     phone: { x: , y: 28, size: 54, focus: 72 },
+    :                 ^
+ 58 |     label: 'CD-ROM',
+ 59 |     src: '/treasure/CD-ROM.png',
+ 60 |     w: 730,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/sections/v2/TreasureSpill.jsx
+./src/sections/v2/TreasureChest.jsx
+./src/sections/v2/Projects.jsx @ webpack-internal:///./node_modules/next/dist/compiled/@next/react-dev-overlay/dist/client.js:1
+[  117636ms] [ERROR] ./src/sections/v2/TreasureSpill.jsx
+Error: 
+  x Expression expected
+    ,-[C:\Users\shrut\Desktop\New folder\shrutikas-portfolio\src\sections\v2\TreasureSpill.jsx:54:1]
+ 54 |   },
+ 55 |   {
+ 56 |     key: 'cdrom',
+ 57 |     phone: { x: , y: 28, size: 54, focus: 72 },
+    :                 ^
+ 58 |     label: 'CD-ROM',
+ 59 |     src: '/treasure/CD-ROM.png',
+ 60 |     w: 730,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/sections/v2/TreasureSpill.jsx
+./src/sections/v2/TreasureChest.jsx
+./src/sections/v2/Projects.jsx @ webpack-internal:///./node_modules/next/dist/compiled/@next/react-dev-overlay/dist/client.js:1
+[  118191ms] [LOG] [Fast Refresh] done in 2223ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  124607ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  125267ms] [LOG] [Fast Refresh] done in 661ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  137398ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  137834ms] [LOG] [Fast Refresh] done in 435ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  147743ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  148220ms] [LOG] [Fast Refresh] done in 477ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  152671ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  153099ms] [LOG] [Fast Refresh] done in 429ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  173833ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  174377ms] [LOG] [Fast Refresh] done in 543ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  191515ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  191781ms] [LOG] [Fast Refresh] done in 266ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  257335ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  258568ms] [LOG] [Fast Refresh] done in 1233ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  260634ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  264586ms] [LOG] [Fast Refresh] done in 3953ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  264740ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  267784ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  268006ms] [LOG] [Fast Refresh] done in 222ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  280468ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  280897ms] [LOG] [Fast Refresh] done in 428ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  290820ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  291320ms] [LOG] [Fast Refresh] done in 500ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  313725ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  317209ms] [LOG] [Fast Refresh] done in 3483ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  323542ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  328741ms] [LOG] [Fast Refresh] done in 5199ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  337646ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  340989ms] [LOG] [Fast Refresh] done in 3343ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  343173ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  348833ms] [LOG] [Fast Refresh] done in 5660ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124
+[  383864ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  384174ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  455149ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:148
+[  455600ms] [LOG] [Fast Refresh] done in 450ms @ webpack-internal:///./node_modules/next/dist/client/dev/error-overlay/hot-dev-client.js:124

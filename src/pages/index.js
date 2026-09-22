@@ -5,8 +5,8 @@ import Experience from '../sections/v2/Experience';
 import Bag from '../sections/v2/Bag';
 import Contact from '../sections/v2/Contact';
 import Footer from '../sections/v2/Footer';
-// Parked until they have content — the section files are still in place.
-// import Projects from '@/sections/v2/Projects';
+import Projects from '../sections/v2/Projects';
+// Parked until it has content — the section file is still in place.
 // import JunkDrawer from '@/sections/v2/JunkDrawer';
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
-        {/* <Projects /> */}
+        <Projects />
         <Bag />
         {/* <JunkDrawer /> */}
         <Contact />
