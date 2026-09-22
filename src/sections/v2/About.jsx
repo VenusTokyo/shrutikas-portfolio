@@ -12,7 +12,7 @@ export default function About() {
   return (
     // Grows past a screen on a phone, where the lanyard and the text stack; a
     // fixed height there would crop one or the other.
-    <Section id="about" height="h-auto min-h-[100dvh] md:h-[100dvh]">
+    <Section id="about" height="h-auto min-h-[100svh] md:h-[100svh]">
       <div className="flex h-full w-full flex-col items-start gap-4 py-10 md:flex-row md:gap-0 md:py-0">
         {/* Held to a slice of the viewport on mobile so the text below it is on
             screen at the same time. The camera pulls back to match. */}

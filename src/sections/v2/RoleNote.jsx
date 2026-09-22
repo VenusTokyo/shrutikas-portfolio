@@ -14,7 +14,17 @@ const PAPER_FILTER = 'sepia(0.32) saturate(1.15) brightness(1.07) contrast(0.9)'
 const LOGO_HEIGHT = 'clamp(1.3rem, 2.8vw, 2.4rem)';
 
 /**
- * The torn page that unrolls when a workplace is picked on the map.
+ * The note that unrolls when a workplace is picked on the map.
+ *
+ * On a wide screen it is a torn page, with the words laid into the artwork. On a
+ * phone it is a plain card, because the artwork cannot be made to work there: the
+ * page is 1028x460, so at 92vw it comes out about 359x161, and a header, a quote,
+ * a paragraph, four highlights and a footnote do not go into 161px. Text laid
+ * over it either overflowed the paper or had to shrink past reading size — every
+ * clamp() here pins to its own minimum at that width, because 1.4vw is 5px.
+ *
+ * So the phone keeps the words and drops the picture. The card is the same warm
+ * paper colour and unrolls the same way; it simply takes the height it needs.
  *
  * `stop` is kept rendered while closing so the text doesn't vanish before the
  * page has finished rolling back up.
@@ -50,15 +60,20 @@ export default function RoleNote({ stop, open, reduced, pinned, onClose }) {
           width={TORN_W}
           height={TORN_H}
           sizes="(max-width: 1000px) 92vw, 1000px"
-          className="h-auto w-full select-none drop-shadow-xl"
+          className="hidden h-auto w-full select-none drop-shadow-xl md:block"
           style={{ filter: PAPER_FILTER }}
           priority={false}
         />
 
-        {/* Reads top-down and flush left, so every line starts on the same edge as
-            the logo. Side insets stay generous — the tears bite deepest there. */}
-        <div className="absolute inset-0 flex flex-col gap-[2.6%] px-[11%] py-[8%] text-left text-navy-dark">
-          <header className="flex items-center justify-between gap-4">
+        {/* A card in its own right on a phone, and a layer over the paper from md
+            up. Everything that positions it against the artwork — the absolute
+            fill, the deep side insets that dodge the tears — is md-only.
+
+            Opaque, not a tint. The map behind it is dimmed but its pins are not,
+            and at 60% the other two workplaces read straight through the card as
+            if the note were overlapping them. */}
+        <div className="relative flex flex-col gap-2 rounded-[0.7rem] border border-navy-dark/15 bg-[#F5EFDB] px-[6%] py-[6%] text-left text-navy-dark shadow-lg md:absolute md:inset-0 md:gap-[2.6%] md:rounded-none md:border-0 md:bg-transparent md:px-[11%] md:py-[8%] md:shadow-none">
+          <header className="flex flex-col items-start gap-1 md:flex-row md:items-center md:justify-between md:gap-4">
             <div className="flex min-w-0 items-center gap-[0.6em]">
               {/* Sized by height, not width: both logos are wide wordmarks with
                   different aspects (4.33 vs 3.93), so a shared width would render
@@ -74,26 +89,26 @@ export default function RoleNote({ stop, open, reduced, pinned, onClose }) {
                 className="w-auto shrink-0 object-contain"
                 style={{ height: `calc(${LOGO_HEIGHT} * ${stop.logoScale ?? 1})` }}
               />
-              <span className="truncate font-gochi text-[clamp(1rem,2.2vw,1.9rem)] leading-none">
+              <span className="truncate font-gochi text-base leading-none md:text-[clamp(1rem,2.2vw,1.9rem)]">
                 {stop.role}
               </span>
             </div>
-            <span className="shrink-0 font-gochi text-[clamp(0.58rem,1.15vw,0.95rem)] leading-none text-charcoal">
+            <span className="shrink-0 font-gochi text-[0.7rem] leading-none text-charcoal md:text-[clamp(0.58rem,1.15vw,0.95rem)]">
               {stop.dates}
             </span>
           </header>
 
-          <p className="font-gochi text-[clamp(0.68rem,1.4vw,1.12rem)] italic leading-snug text-charcoal">
+          <p className="font-gochi text-[0.8rem] italic leading-snug text-charcoal md:text-[clamp(0.68rem,1.4vw,1.12rem)]">
             &ldquo;{stop.blurb}&rdquo;
           </p>
 
           {/* Capped so the measure stays readable — the paper is wide enough that
               a full-bleed line would run past a comfortable line length. */}
-          <p className="max-w-[88%] font-gochi text-[clamp(0.66rem,1.32vw,1.06rem)] leading-snug">
+          <p className="font-gochi text-[0.8rem] leading-snug md:max-w-[88%] md:text-[clamp(0.66rem,1.32vw,1.06rem)]">
             {stop.body}
           </p>
 
-          <ul className="flex flex-wrap gap-x-[1.4em] gap-y-[0.2em] font-gochi text-[clamp(0.6rem,1.2vw,0.98rem)] leading-snug text-navy-dark/90">
+          <ul className="flex flex-wrap gap-x-[1em] gap-y-[0.15em] font-gochi text-[0.75rem] leading-snug text-navy-dark/90 md:gap-x-[1.4em] md:gap-y-[0.2em] md:text-[clamp(0.6rem,1.2vw,0.98rem)]">
             {stop.highlights.map((h) => (
               <li key={h} className="flex items-center gap-[0.35em]">
                 <span aria-hidden="true" className="text-ocean">
@@ -104,7 +119,7 @@ export default function RoleNote({ stop, open, reduced, pinned, onClose }) {
             ))}
           </ul>
 
-          <p className="font-gochi text-[clamp(0.6rem,1.22vw,1rem)] italic leading-snug text-charcoal">
+          <p className="font-gochi text-[0.75rem] italic leading-snug text-charcoal md:text-[clamp(0.6rem,1.22vw,1rem)]">
             📌 {stop.note}
           </p>
         </div>
@@ -116,7 +131,7 @@ export default function RoleNote({ stop, open, reduced, pinned, onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Close note"
-            className="absolute right-[8%] top-[10%] flex h-7 w-7 items-center justify-center rounded-full font-gochi text-lg leading-none text-charcoal transition-colors hover:bg-navy-dark/10"
+            className="absolute right-2 top-2 z-10 flex h-7 w-7 md:right-[8%] md:top-[10%] items-center justify-center rounded-full font-gochi text-lg leading-none text-charcoal transition-colors hover:bg-navy-dark/10"
           >
             ×
           </button>

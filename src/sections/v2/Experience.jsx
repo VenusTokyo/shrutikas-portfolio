@@ -194,7 +194,7 @@ export default function Experience() {
   const at = (o) => (isMobile ? turned(o) : o);
 
   return (
-    <Section id="experience" height="h-[120dvh]">
+    <Section id="experience" height="h-[120svh]">
       <div className="relative w-full h-full">
         {/* Breaks out of the Section's side margins: 100vw pinned to the parent's
             centre lands on the viewport edges, since those margins are symmetric.
@@ -295,6 +295,15 @@ export default function Experience() {
 
           {STOPS.map((rawStop, i) => {
             const stop = at(rawStop);
+            // Which side of its pin the label sits on. It always sat to the
+            // right, which is fine until the pin itself is near the right edge —
+            // the text is whitespace-nowrap, so it does not wrap, it just leaves
+            // the screen. The turn the map takes on a phone puts the first stop
+            // at 71.5% across, and "Software Engineer" ran off the edge there.
+            //
+            // Phone only: on a wide screen there is room to the right of every
+            // pin, and flipping would move labels that are currently fine.
+            const flipLabel = isMobile && stop.x > 55;
             // Reversed: the last entry goes first, so the reveal runs oldest to
             // most recent and finishes on the current role.
             const step = STOPS.length - 1 - i;
@@ -345,12 +354,21 @@ export default function Experience() {
                 {/* Shares the pin's baseline so the text sits beside it, clearing
                     the pin's half-width plus a gap. A button so the notes are
                     reachable by keyboard, not just by pointer. */}
-                <div className="absolute z-20" style={{ left: `${stop.x}%`, top: `${stop.y}%`, transform: 'translate(0, -100%)' }}>
+                <div
+                  className="absolute z-20"
+                  style={{
+                    left: `${stop.x}%`,
+                    top: `${stop.y}%`,
+                    transform: flipLabel ? 'translate(-100%, -100%)' : 'translate(0, -100%)',
+                  }}
+                >
                   <button
                     type="button"
                     aria-expanded={isActive}
                     {...handlers}
-                    className="pointer-events-auto ml-5 whitespace-nowrap text-left font-gochi leading-tight sm:ml-7 md:ml-9"
+                    className={`pointer-events-auto whitespace-nowrap font-gochi leading-tight ${
+                      flipLabel ? 'mr-5 text-right' : 'ml-5 text-left sm:ml-7 md:ml-9'
+                    }`}
                     style={{
                       opacity: inView ? 1 : 0,
                       transform: inView ? 'translateY(0)' : 'translateY(0.5rem)',

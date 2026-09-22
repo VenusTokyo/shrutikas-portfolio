@@ -32,6 +32,345 @@
   }
 }
 
+/* The sea's crests drift side to side, each layer against the one behind it, so
+   the water reads as moving without ever travelling somewhere it has to snap
+   back from. Every layer is drawn wider than its container and offset left, so
+   the travel never brings an edge into view. */
+@keyframes wave-drift-left {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes wave-drift-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+}
+
+/* Project pages orbiting the helm. Every arrival and departure happens on the
+   right, close to the wheel — nothing crosses to the left, because there is no
+   wheel over there for a sheet to be coming off. A page swings up from below the
+   rim, round to where you read it, and on up past the top; or the reverse. The
+   long horizontal offset is what puts both corners out by the hub rather than
+   merely off the edge of the screen.
+
+   Which way it travels is the turn: to starboard the sheets run up (in at the
+   bottom right, out at the top right), to port they run down. The tilt belongs to
+   the position rather than to the direction — a sheet is wound one way at the
+   bottom of the orbit and the other way at the top, and level in the middle where
+   it settles — so the same corner looks the same whether a page is arriving at it
+   or leaving by it.
+
+   The scale is what makes it an orbit rather than a slide: a sheet opens from
+   almost nothing out by the rim to full size in the hand.
+
+   Percentages are the element's own size, and the page is placed by inset rather
+   than by a centring translate — otherwise these would be fighting a base
+   transform for the same property. */
+@keyframes project-page-in-top {
+  from {
+    transform: translate(95%, -85%) scale(0.12) rotate(26deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes project-page-in-bottom {
+  from {
+    transform: translate(95%, 85%) scale(0.12) rotate(-26deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes project-page-out-top {
+  from {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate(95%, -85%) scale(0.15) rotate(26deg);
+    opacity: 0;
+  }
+}
+
+@keyframes project-page-out-bottom {
+  from {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate(95%, 85%) scale(0.15) rotate(-26deg);
+    opacity: 0;
+  }
+}
+
+/* The standing invitation, shown while no project is open. A slow breath rather
+   than a blink: at this size a hard flash reads as an error state, and repeated
+   fast flashing is the thing accessibility guidance warns about outright. */
+@keyframes helm-hint-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* The controls' halo. It lives on the button rather than on the doodle inside
+   it so that it can be animated by itself: the doodle's own filter is a long
+   recolouring chain assembled in JS, and a keyframe animating the two together
+   would have to spell that chain out again here, where it would quietly fall out
+   of step the next time the colour changed. Nested filters compose — the button's
+   drop-shadow is taken from the already-recoloured arrow beneath it. */
+@keyframes arrow-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px rgba(238, 229, 188, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(238, 229, 188, 0.95));
+  }
+}
+
+/* The reward arriving. Overshoots well past full size before settling, which is
+   the shape every "you got something" animation has — a prize being handed over,
+   not a panel appearing. */
+@keyframes treasure-pill-in {
+  0% {
+    transform: scale(0) rotate(-14deg);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.93) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Hopping in place, asking to be opened. Deliberately weighted so it spends most
+   of the cycle sitting still: an even bob all the way round reads as floating,
+   where a pause between hops reads as something alive waiting on you. The squash
+   before the launch and on the landing is what sells the weight, and needs
+   transform-origin at the foot to push against. */
+@keyframes treasure-jump {
+  0%,
+  58%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  66% {
+    transform: translateY(0) scale(1.06, 0.88);
+  }
+  76% {
+    transform: translateY(-24%) scale(0.97, 1.07);
+  }
+  86% {
+    transform: translateY(-27%) scale(1, 1);
+  }
+  95% {
+    transform: translateY(0) scale(1.05, 0.9);
+  }
+}
+
+/* A hint sitting on the camera's control wheel, saying where to press. The
+   arrows it points at are printed on the artwork and the controls over them are
+   invisible hit areas, so without this there is nothing to tell you the wheel
+   does anything at all.
+
+   It breathes rather than blinks, and never reaches full strength: it has to
+   read as a light resting on the dial, not as a button drawn on top of one. The
+   scale swells with the opacity so the two together look like something glowing
+   rather than something fading. */
+@keyframes pad-hint-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.82);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.1);
+  }
+}
+
+/* A shut chest, waiting to be tapped. Slow and small: it has to say "this is
+   yours to do something with" without competing with the pill that is still
+   hopping somewhere behind the window. */
+@keyframes treasure-chest-wait {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(-2.5%) rotate(0.6deg);
+  }
+}
+
+/* Taking a knock. Squash on the way in and a little overshoot coming out of it,
+   with the origin at the foot so it presses into the floor rather than shrinking
+   about its middle. Short enough that three of them in quick succession still
+   feel like three separate hits. */
+@keyframes treasure-chest-knock {
+  0% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+  22% {
+    transform: scale(1.07, 0.92) rotate(-2.6deg);
+  }
+  52% {
+    transform: scale(0.97, 1.04) rotate(1.9deg);
+  }
+  76% {
+    transform: scale(1.02, 0.99) rotate(-0.7deg);
+  }
+  100% {
+    transform: scale(1, 1) rotate(0deg);
+  }
+}
+
+/* And dropping away once it has given up its contents. Accelerating, because it
+   is falling rather than being slid off, and far enough that it clears the bottom
+   of a stage that clips. */
+@keyframes treasure-chest-sink {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(118%);
+  }
+}
+
+/* The chest window, coming up off the pill rather than fading in over it. */
+@keyframes treasure-window-in {
+  from {
+    transform: scale(0.7) translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* For a panel that opens over something already on screen. treasure-window-in
+   scales up from 0.7, which is right for a window arriving out of nowhere and
+   wrong here: the iPod's panel opens while the iPod from the heap is still on its
+   way to the middle, and two of the same object growing at once reads as a
+   glitch. This one only fades. */
+@keyframes treasure-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.2%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* A panel's copy of an object, opening from where that object actually lies in
+   the heap rather than from the middle of the screen. The start is measured at
+   the moment the panel opens and handed in as custom properties, because the
+   distance between the two depends on the panel's own header, which is sized in
+   text and does not scale with the stage.
+
+   The object in the heap stays put underneath and is simply covered. Both are
+   the same picture at the same size in the same place for that first frame, so
+   there is nothing to see in the handover — which is the whole point. */
+@keyframes treasure-handoff {
+  from {
+    transform: translate(var(--from-x, 0), var(--from-y, 0)) scale(var(--from-scale, 1))
+      rotate(var(--from-rot, 0deg));
+  }
+  to {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes treasure-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Something tipping out of the chest.
+
+   Two things this has to get right that the first pass did not.
+
+   Every frame carries translate(-50%, -50%). The item is placed by its centre,
+   and that centring lives in an inline transform on the element; a keyframe that
+   sets `transform` replaces the whole property, so leaving it out here meant the
+   animation held the item half its own size off the mark for the whole fall and
+   it slid into place the moment the animation was dropped. The drift at the end
+   was the bug, not the easing.
+
+   And the easing is per segment rather than one curve over the lot. A fall and a
+   bounce are opposite shapes — falling accelerates into the floor, bouncing
+   decelerates away from it — so the shorthand is `linear` and each keyframe
+   declares the curve for the interval that starts at it. Miss one and that
+   interval silently falls back to the shorthand's.
+
+   --drop is how far above the stage this particular item starts, in its own
+   heights, worked out per item where the heap is laid out. --spin is the angle it
+   tumbles in at and --rest the one it settles at. No fade: the stage clips, so an
+   item is out of sight until it is in frame, which is how a falling thing arrives.
+
+   The squash is on the landing frame and unwinds over the bounce. It is slight on
+   purpose — these are a camera and a CD, not rubber balls. */
+@keyframes treasure-item-fall {
+  0% {
+    transform: translate(-50%, -50%) translateY(var(--drop, -180%)) rotate(var(--spin, -35deg));
+    animation-timing-function: cubic-bezier(0.5, 0, 0.92, 0.45);
+  }
+  58% {
+    transform: translate(-50%, -50%) translateY(0) rotate(var(--rest, 0deg)) scale(1.05, 0.93);
+    animation-timing-function: cubic-bezier(0.16, 0.72, 0.4, 1);
+  }
+  73% {
+    transform: translate(-50%, -50%) translateY(-12%) rotate(var(--rest, 0deg)) scale(0.99, 1.015);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.48);
+  }
+  85% {
+    transform: translate(-50%, -50%) translateY(0) rotate(var(--rest, 0deg)) scale(1.025, 0.97);
+    animation-timing-function: cubic-bezier(0.16, 0.72, 0.4, 1);
+  }
+  93% {
+    transform: translate(-50%, -50%) translateY(-3.5%) rotate(var(--rest, 0deg)) scale(1);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.48);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0) rotate(var(--rest, 0deg)) scale(1);
+  }
+}
+
 @keyframes twinkle {
   0%,
   100% {
