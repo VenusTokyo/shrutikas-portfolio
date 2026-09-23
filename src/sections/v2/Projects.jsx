@@ -312,10 +312,16 @@ const HINT_INSET_WIDE = { ...PAGE_INSET_WIDE, top: HINT_TOP };
 const REWARD_INSET_PHONE = { left: '4vw', right: '4vw', top: '2.5vh' };
 const REWARD_INSET_WIDE = { right: '3vw', bottom: '3vh' };
 
-// Every project seen, as a bitmask rather than a count: a count can't tell four
-// separate projects from the first one opened four times, and rocking between
-// two of them should not hand over the treasure.
-const ALL_SEEN = (1 << PROJECTS.length) - 1;
+// How many times each project has to be dealt before the treasure is handed
+// over. One pass round the wheel was too easy to stumble into — anyone idly
+// pressing an arrow reached the end of the list and the reward fell out. Two
+// passes is about twenty presses, which is a deliberate act rather than an
+// accident.
+//
+// Counted per project, not in total. A single tally cannot tell five projects
+// seen twice from one project opened ten times, and rocking between two of them
+// should not hand over anything.
+const VISITS_NEEDED = 2;
 
 // A halo on the controls, so the thing the invitation points at is the thing
 // that catches the eye. It breathes only while no project is open: once you are
@@ -375,8 +381,10 @@ export default function Projects() {
   // beside the wheel. Starboard brings them up from the bottom and takes them out
   // the top; port runs the orbit the other way.
   const [page, setPage] = useState({ index: null, entry: 'bottom', phase: 'in', seq: 0 });
-  // One bit per project, set the first time each is dealt.
-  const [seen, setSeen] = useState(0);
+  // One tally per project, counted up to VISITS_NEEDED and held there — past the
+  // threshold the extra presses are of no interest, and stopping the climb keeps
+  // the array from changing identity on every turn once the route is complete.
+  const [visits, setVisits] = useState(() => PROJECTS.map(() => 0));
   const timers = useRef([]);
   // Mirrors page.index so a second press that lands before the first has
   // re-rendered still steps on from the right project rather than repeating it.
@@ -409,7 +417,7 @@ export default function Projects() {
           : PROJECTS.length - 1
         : (((current + step) % PROJECTS.length) + PROJECTS.length) % PROJECTS.length;
     shown.current = index;
-    setSeen((m) => m | (1 << index));
+    setVisits((v) => (v[index] >= VISITS_NEEDED ? v : v.map((n, i) => (i === index ? n + 1 : n))));
 
     // Nothing on screen yet: deal straight in. Otherwise the sheet already there
     // has to leave first, and only then does the next one fly.
@@ -599,7 +607,7 @@ export default function Projects() {
           )}
 
           <TreasureChest
-            unlocked={seen === ALL_SEEN}
+            unlocked={visits.every((n) => n >= VISITS_NEEDED)}
             reduced={reduced}
             style={isMobile ? REWARD_INSET_PHONE : REWARD_INSET_WIDE}
           />
