@@ -12,39 +12,27 @@ export const FOLDERS = {
 // had: no key configured, key expired, quota spent, Google having a bad day.
 //
 // The gallery is behind an easter egg most visitors never reach, so an outage
-// here is invisible to almost everyone; the point of the fallback is that when
-// someone does find it, they get a gallery rather than an empty box.
+// Empty on purpose, all three of them.
+//
+// These used to hold a bundled copy of every gallery, served whenever the live
+// Drive listing could not be had — no key configured, key expired, quota spent,
+// Google having a bad day. The copies are gone: they were 7.7MB of her own
+// photographs and artwork sitting in a public repo, duplicating a Drive folder
+// that is already the source of truth and already the only thing that gets
+// updated when she adds something.
+//
+// The trade is real and worth stating. There is no offline copy any more, so a
+// failed listing now means an empty gallery rather than a stale one. The shape
+// is kept so the endpoint still has something to fall back *to* and callers
+// never see undefined.
 export const FALLBACKS = {
-  paint: [
-    { id: 'chai-portrait', name: 'chai portrait', src: '/treasure/paint/chai-portrait.jpg', width: 1200, height: 1600 },
-    { id: 'cow-tote', name: 'cow tote', src: '/treasure/paint/cow-tote.jpg', width: 1200, height: 1280 },
-    { id: 'hollow-knight-bench', name: 'hollow knight bench', src: '/treasure/paint/hollow-knight-bench.jpg', width: 1200, height: 1618 },
-    { id: 'krishna-conch', name: 'krishna conch', src: '/treasure/paint/krishna-conch.jpg', width: 1200, height: 845 },
-    { id: 'mandala', name: 'mandala', src: '/treasure/paint/mandala.jpg', width: 597, height: 839 },
-    { id: 'not-a-phase', name: 'not a phase', src: '/treasure/paint/not-a-phase.jpg', width: 1200, height: 1629 },
-    { id: 'portrait-flowers', name: 'portrait flowers', src: '/treasure/paint/portrait-flowers.jpg', width: 1200, height: 1600 },
-    { id: 'portrait-sunglasses', name: 'portrait sunglasses', src: '/treasure/paint/portrait-sunglasses.jpg', width: 1200, height: 1792 },
-    { id: 'starry-shuttle-fabric', name: 'starry shuttle fabric', src: '/treasure/paint/starry-shuttle-fabric.jpg', width: 1080, height: 1758 },
-    { id: 'sunset-silhouettes', name: 'sunset silhouettes', src: '/treasure/paint/sunset-silhouettes.jpg', width: 1200, height: 1149 },
-  ],
-  crochet: [
-    { id: 'crochet-a', name: 'crochet a', src: '/treasure/crochet/crochet-a.jpg', width: 1200, height: 1600 },
-    { id: 'crochet-b', name: 'crochet b', src: '/treasure/crochet/crochet-b.jpg', width: 1200, height: 2133 },
-    { id: 'crochet-c', name: 'crochet c', src: '/treasure/crochet/crochet-c.jpg', width: 900, height: 1600 },
-    { id: 'embroidered-fawn', name: 'embroidered fawn', src: '/treasure/crochet/embroidered-fawn.jpg', width: 1200, height: 1060 },
-    { id: 'embroidery-bee-wreath', name: 'embroidery bee wreath', src: '/treasure/crochet/embroidery-bee-wreath.jpg', width: 720, height: 1148 },
-    { id: 'orange-pouch', name: 'orange pouch', src: '/treasure/crochet/orange-pouch.jpg', width: 1080, height: 1440 },
-  ],
-  memories: [
-    { id: 'mem-01', name: 'mem 01', src: '/treasure/memories/mem-01.jpg', width: 1200, height: 1600 },
-    { id: 'mem-02', name: 'mem 02', src: '/treasure/memories/mem-02.jpg', width: 1200, height: 1600 },
-    { id: 'mem-03', name: 'mem 03', src: '/treasure/memories/mem-03.jpg', width: 1200, height: 900 },
-    { id: 'mem-04', name: 'mem 04', src: '/treasure/memories/mem-04.jpg', width: 1200, height: 1600 },
-    { id: 'mem-05', name: 'mem 05', src: '/treasure/memories/mem-05.jpg', width: 1200, height: 801 },
-    { id: 'mem-06', name: 'mem 06', src: '/treasure/memories/mem-06.jpg', width: 1200, height: 900 },
-    { id: 'mem-07', name: 'mem 07', src: '/treasure/memories/mem-07.jpg', width: 1200, height: 900 },
-    { id: 'mem-08', name: 'mem 08', src: '/treasure/memories/mem-08.jpg', width: 1200, height: 1600 },
-  ],
+  paint: [],
+  crochet: [],
+  // Deliberately empty. The other two keep a local set for when Drive cannot be
+  // reached, but these are personal photographs and do not belong in the repo —
+  // they are the one gallery whose only copy is the Drive folder. If the fetch
+  // fails the camera says "no photos" rather than showing something stale.
+  memories: [],
 };
 
 // The size asked of Drive's CDN. next/image resizes again on the way through, so

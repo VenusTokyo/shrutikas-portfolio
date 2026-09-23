@@ -1,7 +1,11 @@
 import { Gochi_Hand } from 'next/font/google';
 import '../styles/globals.css';
 import './index.css';
-import { Analytics } from '@vercel/analytics/next';
+// /react, not /next. The `next` entry pulls usePathname and useSearchParams
+// from next/navigation, which are App Router hooks — this site is Pages Router,
+// so they never resolve a route and nothing gets reported. The `react` entry has
+// no router dependency at all and reads the page itself.
+import { Analytics } from '@vercel/analytics/react';
 
 const gochiHand = Gochi_Hand({
   weight: ['400'],

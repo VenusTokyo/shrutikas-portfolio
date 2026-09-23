@@ -275,7 +275,7 @@ export default function TreasureChest({ unlocked, reduced, style }) {
           transform-origin at the foot is what gives the squash something to push
           against — centred, it would look like breathing rather than jumping. */}
       <div
-        className="pointer-events-none fixed z-[45] flex justify-center md:justify-end"
+        className="pointer-events-none fixed z-[45] flex justify-end"
         style={{
           ...style,
           animation: reduced ? 'none' : 'treasure-pill-in 760ms cubic-bezier(.3,1.3,.5,1) both',
